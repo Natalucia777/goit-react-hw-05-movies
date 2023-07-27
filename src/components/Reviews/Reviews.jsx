@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getRevMovie } from '../../services/api';
-import { Message } from 'components/Message/Message';
+import { getRevMovie } from '../../services/movies-api';
+import Message from 'components/Message/Message';
 
 function Reviews() {
   const [isLoading, setIsLoading] = useState(false);

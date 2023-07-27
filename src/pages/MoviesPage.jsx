@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { getSearchMovie } from '../services/movies-api';
 import SearchForm from 'components/SearchForm/SearchForm';
-import { MoviesList } from '../components/MoviesList/MoviesList';
-import { Message } from 'components/Message/Message';
+import Actions from '../components/Actions/Actions';
+import Message from 'components/Message/Message';
 
 function MoviesPage() {
   const [search, setSearch] = useState('');
@@ -25,7 +25,7 @@ function MoviesPage() {
       {isLoading ? (
         <Message>Loading...</Message>
       ) : (
-        <>{<MoviesList movies={movies} />}</>
+        <>{<Actions movies={movies} />}</>
       )}
       {error && <Message>{error}</Message>}
       {isEmpty && <Message>There are no movies !</Message>}

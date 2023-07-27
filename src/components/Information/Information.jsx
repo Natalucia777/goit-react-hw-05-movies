@@ -1,6 +1,7 @@
 import imgMovie from '../../imgMovie/imgMovie.png';
 import PropTypes from 'prop-types';
 
+
 const Informations = ({ movie }) => {
   return (
     <Div>

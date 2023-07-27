@@ -20,3 +20,7 @@ export const getRevMovie = async () => {
 export const getAllMovie = async () => {
 
 };
+
+export const getMovieCast = async () => {
+
+};

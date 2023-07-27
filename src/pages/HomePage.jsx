@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getAllMovie } from '../services/movies-api';
-import { Message } from 'components/Message/Message';
+import Message from 'components/Message/Message';
 import Actions from 'components/Actions/Actions';
 
 function HomePage() {

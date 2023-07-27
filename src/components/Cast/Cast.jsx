@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getMovieCast } from '../../services/api';
-import { Message } from 'components/Message/Message';
-import imagePlaceholder from '../../image-placeholder/img-placeholder.png';
+import { getMovieCast } from '../../services/movies-api';
+import Message from 'components/Message/Message';
+import imgMovie from 'components/imgMovie/imgMovie.png';
 import { Desc, Item } from './Cast.styled';
 
 export default function Cast() {
@@ -20,7 +20,7 @@ export default function Cast() {
         setCast(cast);
       } catch (error) {
         if (error.code !== 'ERR_CANCELED') {
-          setError('Oops! Something went wrong! Try reloading the page!');
+          setError('Try reloading the page!');
         }
       } finally {
         setIsLoading(false);
@@ -31,7 +31,7 @@ export default function Cast() {
   return (
     <>
       {isLoading ? (
-        <Message>Loading...</Message>
+        <Message>Loading</Message>
       ) : (
         <section>
          <ul>
@@ -39,7 +39,7 @@ export default function Cast() {
             casts.map(({ id, name, character, profile_path }) => {
               const imageUrl = profile_path
                 ? `https://image.tmdb.org/t/p/w92${profile_path}`
-                : imagePlaceholder;
+                : imgMovie;
               return (
                 <Item key={id}>
                   <img src={imageUrl} alt={name} width="92" />
