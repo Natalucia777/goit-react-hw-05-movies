@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
 import { getAllMovie } from '../services/movies-api';
 import { Message } from 'components/Message/Message';
-
+import Actions from 'components/Actions/Actions';
 
 function HomePage() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [movies, setMovies] = useState([]);
-
   useEffect(() => {
     async function loadMovies() {
       setIsLoading(true);
@@ -28,11 +27,11 @@ function HomePage() {
 
   return (
     <div>
-      <h1>Trending today</h1>
+      <h1>Popular videos</h1>
       {isLoading ? (
-        <Message>Loading...</Message>
+        <Message>Loading!</Message>
       ) : (
-        <MoviesList movies={movies} />
+        <Actions movies={movies} />
       )}
       {error && <Message>{error}</Message>}
     </div>

@@ -12,3 +12,11 @@ export const getSearchMovie = async () => {
 export const getDetails = async () => {
 
 };
+
+export const getRevMovie = async () => {
+
+};
+
+export const getAllMovie = async () => {
+
+};

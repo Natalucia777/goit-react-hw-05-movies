@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getMovieReviews } from '../../services/api';
+import { getRevMovie } from '../../services/api';
 import { Message } from 'components/Message/Message';
 
-export default function Reviews() {
+function Reviews() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [reviews, setReviews] = useState([]);
@@ -14,11 +14,11 @@ export default function Reviews() {
       setIsLoading(true);
       setError(null);
       try {
-        const { results } = await getMovieReviews(movieId);
+        const { results } = await getRevMovie(movieId);
         setReviews(results);
       } catch (error) {
         if (error.code !== 'ERR_CANCELED') {
-          setError('Oops! Something went wrong! Try reloading the page!');
+          setError('Try reloading!');
         }
       } finally {
         setIsLoading(false);
@@ -30,8 +30,7 @@ export default function Reviews() {
   return (
     <section>
       {isLoading ? (
-        <Message>Loading...</Message>
-      ) : (
+        <Message>Loading</Message>) : (
         <ul>
           {reviews.length > 0 ? (
             reviews.map(({ id, author, content }) => (
@@ -40,12 +39,12 @@ export default function Reviews() {
                 <p>{content}</p>
               </li>
             ))
-          ) : (
-            <Message>We don't have any reviews for this movie</Message>
-          )}
+          ) : ( <Message>We don't have any reviews!</Message>)}
         </ul>
       )}
       {error && <Message>{error}</Message>}
     </section>
   );
 }
+
+export default Reviews;

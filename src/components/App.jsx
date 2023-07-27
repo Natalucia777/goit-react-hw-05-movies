@@ -3,8 +3,6 @@ import { lazy } from 'react';
 import { ToastContainer } from 'react-toastify';
 import NotFound from 'pages/NotFound';
 
-
-
 const HomePage = lazy(() => import("pages/HomePage"));
 const MoviesPage = lazy(() => import("pages/MoviesPage"));
 const MovieDetailsPage = lazy(() => import("pages/MovieDetailsPage"));
