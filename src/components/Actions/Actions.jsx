@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 const Actions = ({ movies }) => {
   const location = useLocation();
   console.log(location);
-
   return (
     <List>
       {movies.map(({ id, name, title }) => (
