@@ -12,18 +12,47 @@ function MoviesPage() {
   const [isEmpty, setIsEmpty] = useState(false);
 
   useEffect(() => {
-    
-  }, []);
+ const abortCtrl = new AbortController();
+    async function searchMovies(search, signal) {
+      setIsLoading(true);
+      setError(null);
+      try {
+        if (search === '') {
+          setMovies([]);
+          setIsEmpty(false);
+          return;
+        }
+        const { results } = await getSearchMovie({ search, abortCtrl: signal });
+        setMovies(results);
+        if (!results.length) {
+          setIsEmpty(true);
+          return;
+        } else {
+          setIsEmpty(false);
+        }
+      } catch (error) {
+        if (error.code !== 'ERR_CANCELED') {
+          setError('Try reloading the page!');
+        }
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    searchMovies(search, abortCtrl.signal);
+    return () => {
+      abortCtrl.abort();
+    };
+  }, [search]);
 
   const handleSearch = search => {
     setSearch(search);
   };
-
   return (
     <div>
       <SearchForm onSubmit={handleSearch} />
       {isLoading ? (
-        <Message>Loading...</Message>
+        <Message>Loading</Message>
       ) : (
         <>{<Actions movies={movies} />}</>
       )}
