@@ -1,4 +1,4 @@
-import imgMovie from '../../imgMovie/imgMovie.png';
+import imgMovie from 'components/img-movie/img-movie.png';
 import PropTypes from 'prop-types';
 
 

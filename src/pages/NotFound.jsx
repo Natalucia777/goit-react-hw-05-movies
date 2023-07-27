@@ -1,18 +1,13 @@
-import { useHistory } from 'react-router-dom';
+import Message from "components/Message/Message";
 
-const NotFound = () => {
-  const history = useHistory();
-  const onGoBack = () => {
-    history.push('/');
-  };
-  return (
-    <>
-      <h2>404 Not Found </h2>
-      <button type="button" onClick={onGoBack}>
-        Go home
-      </button>
-    </>
-  );
-}
+ const NotFound = () => {
+    return (
+        <div>
+            <Message>404 Not Found</Message>
+        </div>
+    )
+ };
 
 export default NotFound;
+
+

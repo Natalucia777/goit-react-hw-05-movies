@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieCast } from '../../services/movies-api';
 import Message from 'components/Message/Message';
-import imgMovie from 'components/imgMovie/imgMovie.png';
+import imgMovie from 'components/img-movie/img-movie.png';
 import { Desc, Item } from './Cast.styled';
 
 export default function Cast() {
@@ -29,12 +29,13 @@ export default function Cast() {
     loadMovieCast();
   }, [movieId]);
   return (
+
     <>
       {isLoading ? (
         <Message>Loading</Message>
       ) : (
         <section>
-         <ul>
+        <ul>
           {casts.length > 0 ? (
             casts.map(({ id, name, character, profile_path }) => {
               const imageUrl = profile_path
@@ -54,6 +55,7 @@ export default function Cast() {
         </ul>
         </section>
       )}
+      
       {error && <Message>{error}</Message>}
     </>
   );

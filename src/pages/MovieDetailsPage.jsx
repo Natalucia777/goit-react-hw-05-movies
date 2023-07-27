@@ -17,12 +17,13 @@ function MovieDetailsPage() {
   useEffect(() => {
     
   }, []);
-
+  
   return (
     <div>
       <AboutTheFilm/>
     </div>
   );
+  
 }
 
 export default MovieDetailsPage;
