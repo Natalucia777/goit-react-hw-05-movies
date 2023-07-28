@@ -4,12 +4,18 @@ import { Container, Header, Link } from './UseLayout.styled';
 
 const UseLayout = () => {
   return (
+
     <Container>
+
       <Header>
+        
         <nav>
+
           <Link to="/">Home</Link>
           <Link to="/movies">Movies</Link>
+
         </nav>
+        
       </Header>
       <Suspense fallback={<div>Loading</div>}>
         <Outlet />
