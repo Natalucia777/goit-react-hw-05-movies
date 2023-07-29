@@ -38,7 +38,6 @@ function MoviesPage() {
         setIsLoading(false);
       }
     }
-
     searchMovies(search, abortCtrl.signal);
     return () => {
       abortCtrl.abort();

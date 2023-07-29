@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 export const Text = styled.div`
   font-size: 20px;
-  color: black;
-  font-weight:600;
+  color: gray;
+  font-weight:500;
   padding:10px;
   `;
 const Message = ({children}) => {

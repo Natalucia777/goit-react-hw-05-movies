@@ -7,6 +7,7 @@ function HomePage() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [movies, setMovies] = useState([]);
+  
   useEffect(() => {
     async function loadMovies() {
       setIsLoading(true);
@@ -29,7 +30,7 @@ function HomePage() {
     <div>
       <h1>Popular videos</h1>
       {isLoading ? (
-        <Message>Loading!</Message>
+        <Message>Loading</Message>
       ) : (
         <Actions movies={movies} />
       )}

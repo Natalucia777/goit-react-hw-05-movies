@@ -1,10 +1,10 @@
 import imgMovie from 'components/img-movie/img-movie.png';
 import PropTypes from 'prop-types';
-
+import { Wrapper } from './Informations.styled';
 
 const Informations = ({ movie }) => {
   return (
-    <Div>
+    <Wrapper>
       <img
         src={ movie.poster_path
             ? `https://image.tmdb.org/t/p/w200${movie.poster_path}`
@@ -12,7 +12,7 @@ const Informations = ({ movie }) => {
         alt={movie.original_title}
         width="200"
       />
-      <Div>
+      <ul>
         <li>
           <h1>
             {movie.original_title} ({movie.releaseYear})
@@ -27,8 +27,8 @@ const Informations = ({ movie }) => {
           <h2>Genres</h2>
           <p>{movie.genres}</p>
         </li>
-      </Div>
-    </Div>
+      </ul>
+    </Wrapper>
   );
 };
 

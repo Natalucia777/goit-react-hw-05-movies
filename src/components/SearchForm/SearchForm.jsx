@@ -1,15 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import PropTypes from 'prop-types';
 import { Form, Input, Button } from './SearchForm.styled';
-import 'react-toastify/dist/ReactToastify.css';
 
 function SearchForm({ onSubmit }) {
   const [search, setSearch] = useState('');
   const [searchParams, setSearchParams] = useSearchParams();
- 
-  useEffect(() => {
+   useEffect(() => {
    const query = searchParams.get('query') || '';
    setSearch(query);
    onSubmit(query);

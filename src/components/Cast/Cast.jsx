@@ -5,7 +5,7 @@ import Message from 'components/Message/Message';
 import imgMovie from 'components/img-movie/img-movie.png';
 import { Desc, Item } from './Cast.styled';
 
-export default function Cast() {
+function Cast() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [casts, setCast] = useState([]);
@@ -29,7 +29,6 @@ export default function Cast() {
     loadMovieCast();
   }, [movieId]);
   return (
-
     <>
       {isLoading ? (
         <Message>Loading</Message>
@@ -50,7 +49,7 @@ export default function Cast() {
               );
             })
           ) : (
-            <Message>We don't have any information about the cast for this movie</Message>
+            <Message>Not information about the movie!</Message>
           )}
         </ul>
         </section>
@@ -60,3 +59,5 @@ export default function Cast() {
     </>
   );
 }
+
+export default Cast;

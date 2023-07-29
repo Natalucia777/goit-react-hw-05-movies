@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 import { Outlet, Link } from 'react-router-dom';
+import { Section } from './AboutTheFilm.styled';
 
 const AboutTheFilm = () => {
   return (
