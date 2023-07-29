@@ -8,7 +8,6 @@ function Reviews() {
   const [error, setError] = useState(null);
   const [reviews, setReviews] = useState([]);
   const { movieId } = useParams();
-
   useEffect(() => {
     async function getReviews() {
       setIsLoading(true);

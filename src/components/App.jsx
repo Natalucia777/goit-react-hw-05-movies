@@ -4,7 +4,6 @@ import { ToastContainer } from 'react-toastify';
 import NotFound from 'pages/NotFound';
 import UseLayout from 'components/UseLayout/UseLayout';
 
-
 const HomePage = lazy(() => import("pages/HomePage"));
 const MoviesPage = lazy(() => import("pages/MoviesPage"));
 const MovieDetailsPage = lazy(() => import("pages/MovieDetailsPage"));
